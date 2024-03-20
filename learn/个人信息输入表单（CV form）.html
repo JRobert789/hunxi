@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Information Form</title>
+    <!-- 引入Bootstrap的CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 引入Font Awesome的图标 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* 自定义样式 */
+        body {
+            padding-top: 50px;
+            background-color: #f8f9fa;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .gray-text {
+            color: #6c757d; /* 灰色字体颜色 */
+        }
+        .other-name-input {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="form-container">
+                    <h2 class="mb-4"><i class="fas fa-user"></i> Personal Information Form</h2>
+                    <!-- Name 输入框 -->
+                    <div class="form-group row">
+                        <label for="firstname" class="col-sm-4 col-form-label">Name</label>
+                        <div class="col-sm-8">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter Your Real Name">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Other Name 输入框 -->
+                    <div class="form-group row">
+                        <label for="othername" class="col-sm-4 col-form-label">Other Name</label>
+                        <div class="col-sm-8">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="othername" name="othername" placeholder="e.g. Nickname">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 性别，民族，出生日期输入框 -->
+                    <div class="form-group row">
+                        <label for="gender" class="col-sm-4 col-form-label">Gender</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" id="gender" name="gender">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="ethnicity" class="col-sm-4 col-form-label">Ethnicity</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="ethnicity" name="ethnicity" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="birthdate" class="col-sm-4 col-form-label">Birthdate</label>
+                        <div class="col-sm-8">
+                            <input type="date" class="form-control" id="birthdate" name="birthdate" required>
+                        </div>
+                    </div>
+                    <!-- 联系电话和邮箱输入框 -->
+                    <div class="form-group row">
+                        <label for="phone" class="col-sm-4 col-form-label">Phone</label>
+                        <div class="col-sm-8">
+                            <input type="tel" class="form-control" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="email" class="col-sm-4 col-form-label">Email</label>
+                        <div class="col-sm-8">
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <!-- 家庭住址输入框 -->
+                    <div class="form-group row">
+                        <label for="address" class="col-sm-4 col-form-label">Home Address</label>
+                        <div class="col-sm-8">
+                            <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
+                        </div>
+                    </div>
+                    <!-- 家庭成员输入框 -->
+                    <div class="form-group row">
+                        <label for="familymembers" class="col-sm-4 col-form-label">Family Members</label>
+                        <div class="col-sm-8">
+                            <textarea class="form-control" id="familymembers" name="familymembers" rows="3" placeholder="e.g. Spouse, Children, Parents" required></textarea>
+                            <small class="form-text text-muted">Use this field to list family members and their relationship to you.</small>
+                        </div>
+                    </div>
+                    <!-- 教育背景输入框 -->
+                    <div class="form-group row">
+                        <label for="education" class="col-sm-4 col-form-label">Educational Background</label>
+                        <div class="col-sm-8">
+                            <textarea class="form-control" id="education" name="education" rows="3" required></textarea>
+                        </div>
+                    </div>
+                    <!-- 工作经历输入框 -->
+                    <div class="form-group row">
+                        <label for="workexperience" class="col-sm-4 col-form-label">Work Experience</label>
+                        <div class="col-sm-8">
+                            <textarea class="form-control" id="workexperience" name="workexperience" rows="3" required></textarea>
+                        </div>
+                    </div>
+                    <!-- 荣获奖励输入框 -->
+                    <div class="form-group row">
+                        <label for="awards" class="col-sm-4 col-form-label">Awards</label>
+                        <div class="col-sm-8">
+                            <textarea class="form-control" id="awards" name="awards" rows="3" placeholder="e.g. Employee of the Month, Best Team Player" required></textarea>
+                            <small class="form-text text-muted">List any awards or recognitions you have received.</small>
+                        </div>
+                    </div>
+                    <!-- 资格证书输入框 -->
+                    <div class="form-group row">
+                        <label for="certificates" class="col-sm-4 col-form-label">Qualifications/Certificates</label>
+                        <div class="col-sm-8">
+                            <textarea class="form-control" id="certificates" name="certificates" rows="3" required></textarea>
+                            <small class="form-text text-muted">List any qualifications or certificates you possess.</small>
+                        </div>
+                    </div>
+                    <!-- 提交按钮 -->
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入Bootstrap的JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- 引入Font Awesome的JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // 当其他名输入框获得焦点时显示
+            $('#othername').focus(function(){
+                $('.other-name-input').show();
+                $(this).attr('placeholder', '');
+            });
+
+            // 当其他名输入框失去焦点时隐藏
+            $('#othername').blur(function(){
+                if ($(this).val() === '') {
+                    $('.other-name-input').hide();
+                    $(this).attr('placeholder', 'e.g. Nickname');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

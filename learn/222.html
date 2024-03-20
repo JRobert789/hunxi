@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Information Form</title>
+    <!-- 引入Bootstrap的CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 引入Font Awesome的图标 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* 自定义样式 */
+        body {
+            padding-top: 50px;
+            background-color: #f8f9fa;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-container">
+                    <h2 class="mb-4"><i class="fas fa-user"></i> 个人信息登记表</h2>
+                    <form id="cvForm">
+                        <div class="form-group">
+                            <label for="fullname">姓名</label>
+                            <input type="text" class="form-control" id="fullname" name="fullname" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="gender">性别</label>
+                                <select id="gender" class="form-control" name="gender" required>
+                                    <option selected disabled>选择性别</option>
+                                    <option>男</option>
+                                    <option>女</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="ethnicity">民族</label>
+                                <input type="text" class="form-control" id="ethnicity" name="ethnicity" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="photo">照片</label>
+                            <input type="file" class="form-control-file" id="photo" name="photo">
+                        </div>
+                        <!-- 其他表单字段按照上述格式继续添加 -->
+                        <!-- 例如，出生日期，婚否，政治面貌，学历，专业，就职岗位等 -->
+
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> 提交</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入Bootstrap的JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- 引入Font Awesome的JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // 表单提交事件
+            $('#cvForm').submit(function(event) {
+                event.preventDefault(); // 阻止默认提交行为
+
+                // 获取表单数据
+                var formData = $(this).serialize();
+
+                // 在这里你可以将表单数据发送到服务器或进行其他操作
+                // 使用HTTPS发送POST请求
+                $.ajax({
+                    url: 'https://localhost/your-script.php', // 将此替换为你的服务器URL
+                    type: 'POST',
+                    data: formData,
+                    success: function(response) {
+                        alert('数据提交成功！');
+                        // 在这里你可以处理成功响应
+                    },
+                    error: function(xhr, status, error) {
+                        alert('提交数据时发生错误。');
+                        // 在这里你可以处理错误响应
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Information Form</title>
+    <!-- 引入Bootstrap的CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 引入Font Awesome的图标 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* 自定义样式 */
+        body {
+            padding-top: 50px;
+            background-color: #f8f9fa;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .gray-text {
+            color: #6c757d; /* 灰色字体颜色 */
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea {
+            position: relative;
+            padding-top: 25px; /* 调整输入框内边距以容纳提示文字 */
+        }
+        .form-group input[type="text"]::placeholder,
+        .form-group input[type="email"]::placeholder,
+        .form-group textarea::placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding-top: 25px; /* 与输入框内边距一致 */
+            color: #6c757d; /* 灰色字体颜色 */
+        }
+        .form-group input[type="text"]:focus::placeholder,
+        .form-group input[type="email"]:focus::placeholder,
+        .form-group textarea:focus::placeholder {
+            color: transparent; /* 获得焦点时隐藏提示文字 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="form-container">
+                    <h2 class="mb-4"><i class="fas fa-user"></i> Personal Information Form</h2>
+                    <!-- Name 输入框 -->
+                    <div class="form-group row">
+                        <label for="firstname" class="col-sm-4 col-form-label">Name</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter Your Real Name" required>
+                        </div>
+                    </div>
+                    <!-- Other Name 输入框 -->
+                    <div class="form-group row">
+                        <label for="othername" class="col-sm-4 col-form-label">Other Name</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="othername" name="othername" placeholder="e.g. Nickname">
+                        </div>
+                    </div>
+                    <!-- 性别，民族，出生日期输入框 -->
+                    <!-- 其他表单字段 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入Bootstrap的JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- 引入Font Awesome的JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+</body>
+</html>
